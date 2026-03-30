@@ -1,6 +1,11 @@
 # Entry point for running the project.
 
-from scraper import search_listings
+try:
+    # Support running the file directly with: python src/main.py
+    from scraper import search_listings
+except ImportError:
+    # Support running as a module with: python -m src.main
+    from src.scraper import search_listings
 
 
 def main() -> None:
