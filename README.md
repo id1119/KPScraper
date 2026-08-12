@@ -1,12 +1,12 @@
 # KP Market Scanner
 
-A lightweight Python tool for scraping and ranking listings from KupujemProdajem, with filtering logic focused on identifying relevant hardware offers and comparing them more intelligently.
+A lightweight Python tool for scraping and ranking listings from KupujemProdajem, focused on identifying relevant hardware offers and comparing them more intelligently.
 
 ## What it does
 
 - Searches KupujemProdajem for a user-provided keyword
 - Parses listing titles, prices and URLs
-- Filters obvious accessories, full-PC listings and mismatched categories
+- Filters accessories, full-PC listings and mismatched categories
 - Detects GPU models such as RTX, GTX and RX variants
 - Scores and ranks listings by relevance
 - Annotates results with model/category information and deal signals
@@ -26,30 +26,16 @@ src/
   scraper.py    # Fetching and HTML parsing
   ranker.py     # Filtering, model detection and ranking
   models.py     # Listing data model
-  config.py     # Configuration
-  ai_eval.py    # Evaluation-related helpers
-data/            # Local/debug data
+data/
+  sample.html   # Small parsing fixture
 requirements.txt
 ```
 
-## Getting started
+## Running the project
 
-```bash
-git clone https://github.com/id1119/KPScraper.git
-cd KPScraper
-python -m venv .venv
-source .venv/bin/activate
-pip install -r requirements.txt
-python -m src.main
-```
+Create a Python virtual environment, install the packages from `requirements.txt`, then run `python -m src.main` from the project root.
 
-Then enter a search term, for example:
-
-```text
-RTX 3070
-```
-
-The CLI prints filtered listings together with ranking metadata, detected model information, price data and the source URL.
+Enter a search term such as `RTX 3070`. The CLI prints filtered listings with ranking metadata, detected model information, price data and the source URL.
 
 ## Notes
 
